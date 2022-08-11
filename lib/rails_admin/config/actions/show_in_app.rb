@@ -15,7 +15,7 @@ module RailsAdmin
         register_instance_option :controller do
           proc do
             # redirect_to main_app.url_for(@object)
-            redirect_to main_app.url_for( controller: @object.class.to_s.underscore.pluralize, action: :show, id: @object.id, locale: I18n.locale)
+            redirect_to main_app.url_for( controller: @object.class.to_s.underscore, action: :show, id: @object.id, locale: I18n.locale)
           end
         end
 
