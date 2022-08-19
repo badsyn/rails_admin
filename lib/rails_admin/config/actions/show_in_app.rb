@@ -14,13 +14,13 @@ module RailsAdmin
 
         register_instance_option :controller do
           proc do
-            # redirect_to main_app.url_for(@object)
-            if [Article, Page].include? @object.class
-              url = main_app.url_for( controller: "/#{@object.class.to_s.underscore.pluralize}", action: :show, id: @object.id, locale: I18n.locale)              
-            else
-              url = main_app.url_for(@object)
-            end
-            redirect_to url
+            redirect_to main_app.url_for(@object)
+            # if [Article, Page].include? @object.class
+            #   url = main_app.url_for( controller: "/#{@object.class.to_s.underscore.pluralize}", action: :show, id: @object.id, locale: I18n.locale)              
+            # else
+            #   url = main_app.url_for(@object)
+            # end
+            # redirect_to url
           end
         end
 
